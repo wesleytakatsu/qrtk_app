@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:qrtk_app/resources/global_variables.dart';
+import 'package:qrtk_app/services/auth_service.dart';
 
 class RegisterPage extends StatelessWidget {
   RegisterPage({super.key});
@@ -14,7 +15,6 @@ class RegisterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Bem vindo de volta
     final language = GlobalVariables().language;
 
     final signUpButtonText = {
@@ -251,7 +251,21 @@ class RegisterPage extends StatelessWidget {
                         FadeInUp(
                             duration: const Duration(milliseconds: 1600),
                             child: MaterialButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                print('register'
+                                    'name: ${_nameController.text}'
+                                    'socialName: ${_socialNameController.text}'
+                                    'telephone: ${_telephoneController.text}'
+                                    'email: ${_emailController.text}'
+                                    'password: ${_passwordController.text}'
+                                );
+                                AuthService().registerPerson(
+                                    _nameController.text,
+                                    _socialNameController.text,
+                                    _telephoneController.text,
+                                    _emailController.text,
+                                    _passwordController.text);
+                              },
                               height: 50,
                               // margin: EdgeInsets.symmetric(horizontal: 50),
                               color: const Color(0xFF59859e),

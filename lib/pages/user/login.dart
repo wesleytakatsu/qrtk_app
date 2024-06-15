@@ -1,15 +1,23 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:qrtk_app/resources/global_variables.dart';
+import 'package:qrtk_app/services/auth_service.dart';
+import 'package:qrtk_app/services/local_data_service.dart';
+import 'package:qrtk_app/pages/home/home_person.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
+
+  // text input controllers
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  // Bem vindo de volta
+  final language = GlobalVariables().language;
 
   @override
   Widget build(BuildContext context) {
 
-    // Bem vindo de volta
-    final language = GlobalVariables().language;
 
     // Entrar
     final loginButtonText = {
@@ -127,6 +135,7 @@ class LoginPage extends StatelessWidget {
                                             bottom: BorderSide(
                                                 color: Colors.grey.shade200))),
                                     child: TextField(
+                                      controller: emailController,
                                       decoration: InputDecoration(
                                           hintText: emailText[language]!,
                                           hintStyle:
@@ -142,6 +151,7 @@ class LoginPage extends StatelessWidget {
                                             bottom: BorderSide(
                                                 color: Colors.grey.shade200))),
                                     child: TextField(
+                                      controller: passwordController,
                                       obscureText: true,
                                       decoration: InputDecoration(
                                           hintText: passwordText[language]!,
@@ -169,7 +179,17 @@ class LoginPage extends StatelessWidget {
                         FadeInUp(
                             duration: const Duration(milliseconds: 1600),
                             child: MaterialButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                // AuthService().login(
+                                //     emailController.text, passwordController.text);
+
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const HomePerson()),
+                                );
+                                
+                              },
                               height: 50,
                               // margin: EdgeInsets.symmetric(horizontal: 50),
                               color: const Color(0xFF59859e),

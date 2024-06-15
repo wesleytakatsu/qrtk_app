@@ -12,11 +12,14 @@ void main() async {
   Hive.init(appSupportDirectory.path);
   var box = await Hive.openBox('local_data');
   var language = box.get('language');
+  print('language in main: $language');
   if (language == null) {
     language = 'pt-br';
     box.put('language', language);
   }
+  print('language in main: $language');
   GlobalVariables().language = language;
+  print('GlobalVariables().language in main: ${GlobalVariables().language}');
 
 
 
