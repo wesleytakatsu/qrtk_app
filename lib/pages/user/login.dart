@@ -1,8 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:qrtk_app/resources/global_variables.dart';
-import 'package:qrtk_app/services/auth_service.dart';
-import 'package:qrtk_app/services/local_data_service.dart';
 import 'package:qrtk_app/pages/home/home_person.dart';
 
 class LoginPage extends StatelessWidget {

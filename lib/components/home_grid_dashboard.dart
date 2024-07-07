@@ -13,42 +13,42 @@ class GridDashboard extends StatefulWidget {
 class _GridDashboardState extends State<GridDashboard> {
   Items item1 = Items(
       title: "Calendar",
-      subtitle: "March, Wednesday",
+      subtitle: "Check Verifications Dates",
       event: "3 Events",
       img: "images/assets/calendar.png");
 
   Items item2 = Items(
-    title: "Groceries",
-    subtitle: "Bocali, Apple",
-    event: "4 Items",
-    img: "images/assets/food.png",
+    title: "Scan",
+    subtitle: "QRCode Scanner",
+    event: "",
+    img: "images/assets/qrcodescan.png",
   );
 
   Items item3 = Items(
     title: "Locations",
-    subtitle: "Lucy Mao going to Office",
+    subtitle: "Tracking Using Code",
     event: "",
     img: "images/assets/map.png",
   );
 
   Items item4 = Items(
-    title: "Activity",
-    subtitle: "Rose favirited your Post",
+    title: "Business",
+    subtitle: "Registered Business",
     event: "",
-    img: "images/assets/festival.png",
+    img: "images/assets/company.png",
   );
 
   Items item5 = Items(
-    title: "To do",
-    subtitle: "Homework, Design",
+    title: "Notes List",
+    subtitle: "Every Notes in Trackers",
     event: "4 Items",
     img: "images/assets/todo.png",
   );
 
   Items item6 = Items(
     title: "Settings",
-    subtitle: "",
-    event: "2 Items",
+    subtitle: "Language, Theme, etc.",
+    event: "",
     img: "images/assets/setting.png",
   );
 

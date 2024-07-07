@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class MenuTestesWidget extends StatelessWidget {
-  const MenuTestesWidget({super.key});
+class MenuWidget extends StatelessWidget {
+  const MenuWidget({super.key});
 
   Widget buildHeader(BuildContext context) => Container(
       color: Colors.deepPurpleAccent,
@@ -34,11 +34,11 @@ class MenuTestesWidget extends StatelessWidget {
                 height: 12,
               ),
               Text(
-                'Takatsu\'s Projects',
+                'Wesley Takatsu',
                 style: TextStyle(fontSize: 28, color: Colors.white),
               ),
               Text(
-                'Wesley Sieiro Takatsu de Araujo',
+                'Admin',
                 style: TextStyle(fontSize: 15, color: Colors.white),
               ),
             ],
@@ -53,7 +53,7 @@ class MenuTestesWidget extends StatelessWidget {
         children: [
           ListTile(
             leading: const Icon(FontAwesomeIcons.user),
-            title: const Text('Apresentação'),
+            title: const Text('Dados Pessoais'),
             onTap: () {
               // Navigator.of(context).push(MaterialPageRoute(
               //   builder: (context) => const MyApp(),
@@ -62,7 +62,7 @@ class MenuTestesWidget extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(FontAwesomeIcons.house),
-            title: const Text('Site Pessoal'),
+            title: const Text('Home'),
             onTap: () {
               // Navigator.of(context).push(MaterialPageRoute(
               //   builder: (context) => const WesleySite(),
@@ -70,8 +70,8 @@ class MenuTestesWidget extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(FontAwesomeIcons.play),
-            title: const Text('Filmes'),
+            leading: const Icon(FontAwesomeIcons.users),
+            title: const Text('Grupos'),
             onTap: () {
               // Navigator.of(context).push(MaterialPageRoute(
               //   builder: (context) => const FilmesPage(),
@@ -79,16 +79,42 @@ class MenuTestesWidget extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(FontAwesomeIcons.screwdriverWrench),
-            title: const Text('Manutenção de PC'),
+            leading: const Icon(FontAwesomeIcons.cogs),
+            title: const Text('Permissões'),
             onTap: () {},
           ),
+          ListTile(
+            leading: const Icon(FontAwesomeIcons.building),
+            title: const Text('Empresa'),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: const Icon(FontAwesomeIcons.handshake),
+            title: const Text('Parceiros'),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: const Icon(FontAwesomeIcons.wallet),
+            title: const Text('Financeiro'),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: const Icon(FontAwesomeIcons.userPlus),
+            title: const Text('Funcionários'),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: const Icon(FontAwesomeIcons.qrcode),
+            title: const Text('QR Code'),
+            onTap: () {},
+          ),
+
           const Divider(
             color: Colors.black54,
           ),
           ListTile(
-            leading: const Icon(FontAwesomeIcons.discord),
-            title: const Text('Discord'),
+            leading: const Icon(Icons.settings),
+            title: const Text('Configurações'),
             onTap: () {},
           ),
           ListTile(

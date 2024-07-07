@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:qrtk_app/configs.dart';
+import 'package:qrtk_app/resources/global_variables.dart';
 
 class AuthService extends ChangeNotifier {
   bool isAuthenticated = false;
@@ -23,7 +24,11 @@ class AuthService extends ChangeNotifier {
     );
 
     if (response.statusCode == 200) {
-      return jsonDecode(response.body);
+      final data = jsonDecode(response.body);
+      GlobalVariables().token = data['token'];
+      isAuthenticated = true;
+      notifyListeners();
+      return data;
     } else {
       throw Exception('Failed to login');
     }
@@ -37,7 +42,7 @@ class AuthService extends ChangeNotifier {
 
   // register
   Future<Map<String, dynamic>> registerPerson(String name, String socialName, String tel, String email, String password) async {
-    final url = Uri.parse('$registerPersonUrl');
+    final url = Uri.parse(registerPersonUrl);
     print('url: $url');
     
     final response = await http.post(
